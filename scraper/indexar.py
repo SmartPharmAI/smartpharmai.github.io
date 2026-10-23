@@ -43,9 +43,10 @@ GUARDAR_CADA = 200          # páginas entre guardados, por si la ejecución se 
 # Tiendas comprobadas: permiten sus páginas de producto en robots.txt y publican
 # el código de barras y el precio en datos estructurados. La web no muestra sus nombres.
 TIENDAS = [
-    {"id": "t1", "base": "https://www.farmaciagt.com", "producto": r"\.html$"},
-    {"id": "t2", "base": "https://www.farmaciaencasaonline.es", "producto": r"/\d+-[^/]+\.html$"},
-    {"id": "t3", "base": "https://www.parafarmaciacampoamor.com", "producto": r"/es/\d+-[^/]+\.html$"},
+    {"id": "t1", "base": "https://www.farmaciagt.com", "producto": r"\.html$", "pausa": 2},
+    {"id": "t2", "base": "https://www.farmaciaencasaonline.es", "producto": r"/\d+-[^/]+\.html$", "pausa": 2},
+    # Su robots.txt pide 10 s; se fija aquí también por si un día no se pudiera leer
+    {"id": "t3", "base": "https://www.parafarmaciacampoamor.com", "producto": r"/es/\d+-[^/]+\.html$", "pausa": 10},
 ]
 
 
@@ -121,9 +122,18 @@ def recorrer_tienda(tienda, fin, max_paginas, arranque, informe):
     estado.setdefault("sin", {})
     datos = cargar(DATOS / f"{tid}.json", {})
 
+    # robots.txt se lee con nuestro identificador: con el de Python, algún cortafuegos
+    # devuelve una página de bloqueo que se tomaría por un robots.txt vacío
     robots = urllib.robotparser.RobotFileParser(tienda["base"] + "/robots.txt")
-    robots.read()
-    pausa = max(PAUSA_MINIMA, float(robots.crawl_delay(USER_AGENT) or 0))
+    try:
+        texto = descargar(tienda["base"] + "/robots.txt")
+    except (urllib.error.URLError, TimeoutError, ValueError):
+        texto = ""
+    if not re.search(r"^\s*user-agent\s*:", texto, re.I | re.M):
+        informe[tid] = "robots.txt no legible: tienda saltada en esta ejecución"
+        return
+    robots.parse(texto.splitlines())
+    pausa = max(PAUSA_MINIMA, tienda["pausa"], float(robots.crawl_delay(USER_AGENT) or 0))
 
     caducado = not estado["mapa"] or date.fromisoformat(estado["mapa"]) < date.today() - timedelta(days=DIAS_MAPA)
     if caducado or not estado["urls"]:
