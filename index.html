@@ -1,0 +1,532 @@
+<!doctype html>
+<html lang="es-ES">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Vista previa: quitar noindex al publicar -->
+  <meta name="robots" content="noindex, nofollow">
+  <title>Gestión de stock y compras para farmacias | SmartPharma</title>
+  <meta name="description" content="Recupera el dinero parado de tu farmacia. Optimización de stock, pedidos con predicción y compras conjuntas. Piloto gratuito de 2 meses y, después, si no libera dinero, no pagas.">
+  <meta property="og:title" content="Tu farmacia tiene dinero parado en la estantería">
+  <meta property="og:description" content="Profesionales del sector farmacéutico revisan tu stock y te acompañan para optimizarlo. Piloto gratuito para 5 farmacias.">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="es_ES">
+  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="assets/css/styles.css">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "SmartPharma",
+    "description": "Consultoría de stock y compras para farmacias independientes."
+  }
+  </script>
+</head>
+<body>
+
+<header class="header">
+  <div class="container header__inner">
+    <a class="logo" href="index.html"><span class="logo__mark" aria-hidden="true">SP</span>SmartPharma</a>
+    <nav class="nav" aria-label="Principal">
+      <a href="piloto/index.html">Piloto gratuito</a>
+      <a href="comparador/index.html">Comparador de precios</a>
+      <a href="servicios/index.html">Servicios</a>
+      <a href="tus-datos/index.html">Tus datos</a>
+      <a href="preguntas/index.html">Preguntas</a>
+    </nav>
+    <a class="btn btn--cta btn--small header__cta" href="#alta">Quiero una plaza en el piloto</a>
+    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="mobile-nav">Menú</button>
+  </div>
+  <div class="container">
+    <nav class="mobile-nav" id="mobile-nav" aria-label="Principal (móvil)">
+      <a href="piloto/index.html">Piloto gratuito</a>
+      <a href="comparador/index.html">Comparador de precios</a>
+      <a href="servicios/index.html">Servicios</a>
+      <a href="tus-datos/index.html">Tus datos</a>
+      <a href="preguntas/index.html">Preguntas</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+  <!-- 1. Hero con informe real -->
+  <section class="hero">
+    <div class="container hero__grid">
+      <div>
+        <p class="eyebrow">Gestión de stock y compras para farmacias</p>
+        <h1>Tu farmacia tiene dinero parado en la estantería. Te ayudamos a recuperarlo.</h1>
+        <p class="hero__sub">Profesionales del sector farmacéutico analizan tu stock y tus ventas y te acompañan mes a mes para optimizarlo. Piloto gratuito de 2 meses y, después, si no libera dinero, no pagas.</p>
+        <div class="btn-row">
+          <a class="btn btn--cta" href="#alta">Quiero una plaza en el piloto</a>
+          <a class="btn btn--ghost" href="#comparador">Compara tus precios</a>
+        </div>
+        <ul class="trust-mini">
+          <li>Profesionales del sector farmacéutico</li>
+          <li>Contrato de protección de datos firmado</li>
+          <li>No cobramos de laboratorios ni almacenes</li>
+          <li>Tú decides cada pedido</li>
+        </ul>
+      </div>
+      <div>
+        <figure class="dash" aria-label="Ejemplo de diagnóstico de stock de una farmacia de barrio, con cifras inventadas">
+          <div class="dash__head">
+            <div><b>Diagnóstico de stock</b><br><span>Farmacia de barrio · 84.900 € en stock a coste</span></div>
+            <span class="dash__tag">EJEMPLO</span>
+          </div>
+          <div class="dash__body">
+            <div class="dash__kpis">
+              <div class="dash__kpi">
+                <small>Salud del stock</small>
+                <strong>68 %</strong>
+                <div class="dash__meter"><i style="width:68%"></i></div>
+              </div>
+              <div class="dash__kpi">
+                <small>Sin ventas en 12 meses</small>
+                <strong>9.840 €</strong>
+                <em>214 productos · 11,6 % del stock</em>
+              </div>
+              <div class="dash__kpi">
+                <small>Faltas este mes</small>
+                <strong>23</strong>
+                <em>≈ 1.150 € en ventas perdidas</em>
+              </div>
+              <div class="dash__kpi">
+                <small>Rotación del stock</small>
+                <strong>5,8</strong>
+                <em class="up">vueltas al año · ventas +2,4 %</em>
+              </div>
+            </div>
+            <div class="dash__risk">
+              <svg viewBox="0 0 100 100" role="img" aria-labelledby="dash-risk-desc">
+                <desc id="dash-risk-desc">Dinero en riesgo de ejemplo: 15.840 euros. 62 % sin ventas en 12 meses, 22 % sobrestock y 16 % ventas perdidas estimadas en 3 meses.</desc>
+                <g transform="rotate(-90 50 50)" fill="none" stroke-width="14">
+                  <circle cx="50" cy="50" r="40" stroke="#d08a00" stroke-dasharray="152.35 98.98" stroke-dashoffset="0"><title>Sin ventas en 12 meses: 9.840 €</title></circle>
+                  <circle cx="50" cy="50" r="40" stroke="#0f5e6b" stroke-dasharray="52.99 198.34" stroke-dashoffset="-154.35"><title>Sobrestock: 3.420 €</title></circle>
+                  <circle cx="50" cy="50" r="40" stroke="#9aa9ad" stroke-dasharray="39.99 211.34" stroke-dashoffset="-209.34"><title>Ventas perdidas (3 meses): 2.580 €</title></circle>
+                </g>
+                <text x="50" y="48" text-anchor="middle" font-size="13" font-weight="800" fill="#1b2a2f">15.840 €</text>
+                <text x="50" y="61" text-anchor="middle" font-size="8" fill="#53636a">en riesgo</text>
+              </svg>
+              <div>
+                <h4>Dónde está el dinero en riesgo</h4>
+                <ul class="dash__legend">
+                  <li><span class="swatch" style="background:#d08a00"></span>Sin ventas en 12 meses<b>9.840 €</b></li>
+                  <li><span class="swatch" style="background:#0f5e6b"></span>Sobrestock<b>3.420 €</b></li>
+                  <li><span class="swatch" style="background:#9aa9ad"></span>Ventas perdidas (3 meses)<b>2.580 €</b></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </figure>
+        <p class="dash-caption"><b>Así es tu diagnóstico.</b> Ejemplo con cifras inventadas de una farmacia de barrio, con los mismos indicadores que calcula nuestra herramienta.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 2. Comparador como gancho -->
+  <section class="section section--alt" id="comparador">
+    <div class="container grid grid--2" style="align-items:center">
+      <div>
+        <p class="eyebrow">Gratis · 1 minuto · No guarda nada</p>
+        <h2>¿Puede tu farmacia competir en precio?</h2>
+        <p>Escanea con el móvil el código de barras de cualquier crema o producto de parafarmacia y mira, en segundos, el precio más bajo que hay online frente a tu PVP.</p>
+        <p><strong>Sola, difícilmente:</strong> las grandes superficies compran por volumen. Comprando mejor y junto a otras farmacias, sí puedes.</p>
+        <a class="btn btn--cta" href="comparador/index.html#escaner">Escanear un producto</a>
+        <p class="small" style="margin-top:12px">No guarda nada: solo se consulta el código de barras. Los medicamentos se descartan solos.</p>
+      </div>
+      <figure class="chart-card chart" style="margin:0">
+        <span class="chart-tag">Ejemplo ilustrativo</span>
+        <p class="chart-title">Tu PVP frente al precio online más bajo</p>
+        <p class="chart-sub"><span class="swatch" style="background:#0f5e6b;border-radius:50%"></span> Tu PVP &nbsp; <span class="swatch" style="background:#9aa9ad;border-radius:50%"></span> Online más bajo</p>
+        <svg viewBox="0 0 400 140" role="img" aria-labelledby="rx-chart-desc">
+          <desc id="rx-chart-desc">Ejemplo: protector solar, PVP 19,95 € frente a 15,49 € online (22 % menos); champú, 15,90 € frente a 13,20 € (17 % menos); crema de manos, 6,50 € frente a 6,95 € (tu precio es mejor).</desc>
+          <line x1="150" y1="130" x2="370" y2="130" stroke="#e3e0d8" stroke-width="1"/>
+          <text x="150" y="140" font-size="12" text-anchor="middle">0 €</text>
+          <text x="260" y="140" font-size="12" text-anchor="middle">11 €</text>
+          <text x="370" y="140" font-size="12" text-anchor="middle">22 €</text>
+          <text x="0" y="26" font-size="13" class="t-ink" style="font-weight:600">Protector solar SPF50+</text>
+          <line x1="304.9" y1="22" x2="349.5" y2="22" stroke="#c8d1d3" stroke-width="2"/>
+          <circle class="mark" cx="304.9" cy="22" r="6" fill="#9aa9ad" stroke="#fff" stroke-width="2"><title>Online más bajo: 15,49 €</title></circle>
+          <circle class="mark" cx="349.5" cy="22" r="6" fill="#0f5e6b" stroke="#fff" stroke-width="2"><title>Tu PVP: 19,95 €</title></circle>
+          <text x="400" y="26" font-size="13" text-anchor="end" class="t-ink">−22 %</text>
+          <text x="0" y="66" font-size="13" class="t-ink" style="font-weight:600">Champú anticaída</text>
+          <line x1="282" y1="62" x2="309" y2="62" stroke="#c8d1d3" stroke-width="2"/>
+          <circle class="mark" cx="282" cy="62" r="6" fill="#9aa9ad" stroke="#fff" stroke-width="2"><title>Online más bajo: 13,20 €</title></circle>
+          <circle class="mark" cx="309" cy="62" r="6" fill="#0f5e6b" stroke="#fff" stroke-width="2"><title>Tu PVP: 15,90 €</title></circle>
+          <text x="400" y="66" font-size="13" text-anchor="end" class="t-ink">−17 %</text>
+          <text x="0" y="106" font-size="13" class="t-ink" style="font-weight:600">Crema de manos</text>
+          <line x1="215" y1="102" x2="219.5" y2="102" stroke="#c8d1d3" stroke-width="2"/>
+          <circle class="mark" cx="219.5" cy="102" r="6" fill="#9aa9ad" stroke="#fff" stroke-width="2"><title>Online más bajo: 6,95 €</title></circle>
+          <circle class="mark" cx="215" cy="102" r="6" fill="#0f5e6b" stroke="#fff" stroke-width="2"><title>Tu PVP: 6,50 €</title></circle>
+          <text x="400" y="106" font-size="13" text-anchor="end">mejor</text>
+        </svg>
+        <figcaption class="chart-foot">Productos genéricos y precios inventados.</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- 3. Servicios, versión corta -->
+  <section class="section" id="servicios">
+    <div class="container container--wide">
+      <div class="section__intro">
+        <h2>Qué hacemos</h2>
+        <p>Los dos primeros están incluidos en el piloto gratuito. <a href="servicios/index.html">Ver todos los servicios en detalle</a>.</p>
+      </div>
+      <div class="services">
+        <article class="svc svc--short">
+          <span class="svc__tag">Incluido en el piloto</span>
+          <span class="icon icon--line" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M21 8 12 3 3 8v8l9 5 9-5z"/><path d="m3 8 9 5 9-5M12 13v8"/></svg></span>
+          <h3>Recupera el dinero parado de tu stock</h3>
+          <p class="svc__lead">Qué sobra, qué falta y cómo corregirlo, adaptado a tu farmacia.</p>
+          <ul><li>Plan producto a producto.</li><li>Acompañamiento mes a mes.</li></ul>
+          <p class="svc__foot"><a href="servicios/index.html#stock">Saber más</a></p>
+        </article>
+        <article class="svc svc--short">
+          <span class="svc__tag">Incluido en el piloto</span>
+          <span class="icon icon--line" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="m7 15 4-4 3 3 6-7"/></svg></span>
+          <h3>Pedidos con tus números</h3>
+          <p class="svc__lead">Una segunda opinión con datos antes de cada pedido.</p>
+          <ul><li>Predicción con tu histórico.</li><li>Tú apruebas cada línea.</li></ul>
+          <p class="svc__foot"><a href="servicios/index.html#pedidos">Saber más</a></p>
+        </article>
+        <article class="svc svc--short">
+          <span class="svc__tag svc__tag--apart">Servicio aparte</span>
+          <span class="icon icon--line" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="4" width="12" height="17" rx="2"/><path d="M9 4V3h6v1"/><path d="m9 13 2 2 4-4"/></svg></span>
+          <h3>¿Vas a comprar una farmacia?</h3>
+          <p class="svc__lead">Conoce lo que vale su stock antes de firmar.</p>
+          <ul><li>Stock vendible, parado y caducado.</li><li>Informe para tu asesor y tu banco.</li></ul>
+          <p class="svc__foot"><a href="#alta" class="js-tipo" data-tipo="compra">Pide presupuesto</a> · <a href="servicios/index.html#compraventa">Saber más</a></p>
+        </article>
+        <article class="svc svc--short svc--soon">
+          <span class="svc__tag svc__tag--soon">En preparación</span>
+          <span class="icon icon--line" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="6" r="2.5"/><circle cx="18" cy="6" r="2.5"/><circle cx="12" cy="18" r="2.5"/><path d="M8 7.5 10.5 16M16 7.5 13.5 16M8.5 6h7"/></svg></span>
+          <h3>Compras conjuntas</h3>
+          <p class="svc__lead">Suma tu pedido al de otras farmacias para llegar al tramo.</p>
+          <ul><li>Ves el ahorro antes de decidir.</li><li>Sin cuotas ni compras mínimas.</li></ul>
+          <p class="svc__foot"><a href="servicios/index.html#compras">Saber más</a></p>
+        </article>
+        <article class="svc svc--short svc--soon">
+          <span class="svc__tag svc__tag--soon">En preparación</span>
+          <span class="icon icon--line" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M4 8h13l-3-3M20 16H7l3 3"/></svg></span>
+          <h3>Intercambio de parafarmacia parada</h3>
+          <p class="svc__lead">Cambia lo que no vendes por lo que sí, a igual valor.</p>
+          <ul><li>Documentado con su factura.</li><li>Solo con tu aprobación.</li></ul>
+          <p class="svc__foot"><a href="servicios/index.html#intercambio">Saber más</a></p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. Tipos de farmacia: tarjetas deslizantes -->
+  <section class="section barrio" id="tu-farmacia">
+    <div class="container">
+      <div class="section__intro">
+        <p class="eyebrow">Elige la tuya</p>
+        <h2>Cada farmacia tiene su problema. Y su solución.</h2>
+      </div>
+
+      <div class="slider js-slider" aria-roledescription="carrusel" aria-label="Tipos de farmacia">
+        <div class="slider__chips" role="tablist" aria-label="Tipo de farmacia">
+          <button class="slider__chip" type="button" role="tab" aria-selected="true" data-slide="0">Barrio</button>
+          <button class="slider__chip" type="button" role="tab" aria-selected="false" data-slide="1">Rural</button>
+          <button class="slider__chip" type="button" role="tab" aria-selected="false" data-slide="2">Temporada</button>
+          <button class="slider__chip" type="button" role="tab" aria-selected="false" data-slide="3">Grande</button>
+          <button class="slider__chip" type="button" role="tab" aria-selected="false" data-slide="4">Recién comprada o heredada</button>
+          <button class="slider__chip" type="button" role="tab" aria-selected="false" data-slide="5">Antes de traspasar</button>
+        </div>
+
+        <div class="slider__track" tabindex="0">
+          <article class="slider__slide" aria-label="1 de 6: farmacia de barrio">
+            <h3 class="slider__title">Farmacia de barrio</h3>
+            <div class="barrio__grid">
+              <div class="barrio__step">
+                <h3>El problema</h3>
+                <p>Compites con cooperativas, grandes superficies y venta online. El precio del medicamento no lo pones tú y en parafarmacia el cliente compara en el móvil. Lo que te queda es comprar bien y no tener dinero parado en la estantería.</p>
+              </div>
+              <div class="barrio__step">
+                <h3>La solución</h3>
+                <ul>
+                  <li><b>Optimización del stock:</b> damos salida a la parafarmacia parada y ajustamos el surtido a tu clientela.</li>
+                  <li><b>Pedidos con tus números:</b> pides lo que vas a vender y entras en el tramo que te compensa.</li>
+                  <li><b>Compras conjuntas:</b> sumas tu pedido al de otras farmacias para llegar a tramos que sola no alcanzas.</li>
+                </ul>
+              </div>
+            </div>
+          </article>
+
+          <article class="slider__slide" aria-label="2 de 6: farmacia rural">
+            <h3 class="slider__title">Farmacia rural</h3>
+            <div class="barrio__grid">
+              <div class="barrio__step">
+                <h3>El problema</h3>
+                <p>Poco volumen, poco tiempo y muchas veces trabajas sola. Casi todo son tratamientos de uso continuado, cada caja que caduca es dinero perdido y a los tramos de los laboratorios no llegas nunca.</p>
+              </div>
+              <div class="barrio__step">
+                <h3>La solución</h3>
+                <ul>
+                  <li><b>Pedidos con tus números:</b> no te quedas sin los tratamientos de siempre ni acumulas cajas que caducan.</li>
+                  <li><b>Optimización del stock:</b> plan para lo que está cerca de caducar o no rota.</li>
+                  <li><b>Compras conjuntas:</b> tu pedido pequeño se suma al de otras farmacias.</li>
+                  <li>Las revisiones, antes de abrir o al cierre.</li>
+                </ul>
+              </div>
+            </div>
+          </article>
+
+          <article class="slider__slide" aria-label="3 de 6: farmacia de temporada">
+            <h3 class="slider__title">Farmacia de temporada (costa o turística)</h3>
+            <div class="barrio__grid">
+              <div class="barrio__step">
+                <h3>El problema</h3>
+                <p>En verano vendes el triple en solares y dermo, y en invierno te sobra. Te quedas corto en agosto, te comes producto en octubre y pierdes margen en devoluciones y saldos.</p>
+              </div>
+              <div class="barrio__step">
+                <h3>La solución</h3>
+                <ul>
+                  <li><b>Pedidos con tus números:</b> el pedido de precampaña se calcula con tus veranos anteriores.</li>
+                  <li><b>Optimización del stock:</b> en septiembre, plan para devolver, liquidar o dejar de reponer lo que sobre.</li>
+                  <li><b>Intercambio de parafarmacia:</b> lo que te sobra en octubre puede tener salida en otra farmacia.</li>
+                </ul>
+              </div>
+            </div>
+          </article>
+
+          <article class="slider__slide" aria-label="4 de 6: farmacia grande">
+            <h3 class="slider__title">Farmacia grande con responsable de compras</h3>
+            <div class="barrio__grid">
+              <div class="barrio__step">
+                <h3>El problema</h3>
+                <p>Miles de referencias y el dinero parado repartido en cientos de productos. Los informes estándar del programa de gestión se quedan cortos para decidir por categoría y por marca.</p>
+              </div>
+              <div class="barrio__step">
+                <h3>La solución</h3>
+                <ul>
+                  <li><b>Optimización del stock:</b> rotación, margen y cobertura por categoría y marca, con tu comprador, no en su lugar.</li>
+                  <li><b>Pedidos con tus números:</b> predicción por referencia para campañas y transfer.</li>
+                  <li><b>Compras conjuntas:</b> volumen extra en los laboratorios que más pesan.</li>
+                </ul>
+              </div>
+            </div>
+          </article>
+
+          <article class="slider__slide" aria-label="5 de 6: farmacia recién comprada o heredada">
+            <h3 class="slider__title">Farmacia recién comprada o heredada</h3>
+            <div class="barrio__grid">
+              <div class="barrio__step">
+                <h3>El problema</h3>
+                <p>Te quedas con el stock del anterior titular sin saber qué vale de verdad, y muchas veces con un préstamo encima. Necesitas caja y no sabes por dónde empezar.</p>
+              </div>
+              <div class="barrio__step">
+                <h3>La solución</h3>
+                <ul>
+                  <li><b>Optimización del stock:</b> diagnóstico del stock heredado y plan para liberar caja.</li>
+                  <li><b>Pedidos con tus números:</b> desde el primer mes, pides según tus ventas reales.</li>
+                  <li><b>¿Aún no has firmado?</b> El análisis de compraventa te dice lo que vale el stock antes de pagarlo.</li>
+                </ul>
+              </div>
+            </div>
+          </article>
+
+          <article class="slider__slide" aria-label="6 de 6: farmacia antes de traspasar">
+            <h3 class="slider__title">Farmacia que se va a traspasar</h3>
+            <div class="barrio__grid">
+              <div class="barrio__step">
+                <h3>El problema</h3>
+                <p>Quieres traspasar en uno o dos años y el stock parado resta valor en la negociación. El comprador lo va a revisar producto a producto.</p>
+              </div>
+              <div class="barrio__step">
+                <h3>La solución</h3>
+                <ul>
+                  <li><b>Optimización del stock:</b> plan para dar salida a lo parado antes de la venta.</li>
+                  <li><b>Análisis de stock:</b> un informe claro de lo que vale tu stock para negociar con el comprador.</li>
+                  <li><b>Intercambio de parafarmacia:</b> salida para lo que no vas a vender.</li>
+                </ul>
+              </div>
+            </div>
+          </article>
+        </div>
+
+        <div class="slider__nav">
+          <button class="slider__btn js-prev" type="button" aria-label="Anterior">‹</button>
+          <button class="slider__btn js-next" type="button" aria-label="Siguiente">›</button>
+          <span class="slider__count js-count" aria-live="polite">1 de 6</span>
+        </div>
+      </div>
+
+      <div class="btn-row" style="margin-top:24px">
+        <a class="btn btn--cta" href="#alta">Quiero una plaza en el piloto</a>
+        <a class="btn btn--ghost" href="comparador/index.html">Compara tus precios</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5. Personalización -->
+  <section class="section">
+    <div class="container">
+      <div class="section__intro">
+        <h2>Tu análisis, a la medida de tu farmacia</h2>
+        <p>No hay dos farmacias iguales. Ajustamos el análisis a cómo vendes, a quién vendes y qué farmacia eres.</p>
+      </div>
+      <div class="grid grid--3">
+        <article class="card">
+          <h3>Tu tipo de ventas</h3>
+          <p>Mucha parafarmacia, mucho tratamiento de uso continuado o mucha temporada: cada mezcla pide una prioridad distinta.</p>
+        </article>
+        <article class="card">
+          <h3>Tu clientela</h3>
+          <p>Si quieres, con datos seudonimizados vemos cuántos clientes repiten y qué se compra de forma recurrente. Es opcional.</p>
+        </article>
+        <article class="card">
+          <h3>Tu farmacia</h3>
+          <p>Tamaño, zona, equipo y programa de gestión. No es lo mismo un barrio de ciudad que un pueblo o la costa.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- 6. Piloto, garantía y formulario -->
+  <section class="section section--alt" id="piloto">
+    <div class="container">
+      <div class="pilot">
+        <div class="pilot__head">
+          <p class="eyebrow" style="color:#a8dde3">Piloto gratuito · 2 meses</p>
+          <h2>5 farmacias, 2 meses, 0 €</h2>
+          <p>Empezamos con 5 farmacias para atender bien a cada una. Una persona de referencia te acompaña en todo el proceso.</p>
+        </div>
+        <div class="pilot__body">
+          <div>
+            <h3>Qué recibes</h3>
+            <ul class="checklist">
+              <li>Diagnóstico completo de tu stock.</li>
+              <li>Acompañamiento para optimizarlo, no solo pedidos.</li>
+              <li>Un pedido sugerido cada mes.</li>
+              <li>Un Excel producto a producto que es tuyo, sigas o no.</li>
+            </ul>
+            <p class="small">Te pedimos unas 3 horas en 2 meses: la exportación de datos (te guiamos, ver la <a href="guia-exportacion/farmatic.html">guía para Farmatic</a>) y 15 minutos cada dos semanas.</p>
+
+            <div class="guarantee">
+              <strong>Si no libera dinero, no pagas</strong>
+              <p>Si sigues tras el piloto, son 99 €/mes. Y a los 3 meses lo comprobamos frente a la foto inicial: si el dinero liberado de tu stock parado no cubre lo que has pagado, no pagas esos meses.</p>
+            </div>
+            <p class="small"><a href="piloto/index.html">Ver el piloto en detalle</a>: fases, garantía y <a href="piloto/acuerdo.html">acuerdo de una página</a>.</p>
+          </div>
+
+          <div id="alta">
+            <form class="form js-lead-form" novalidate>
+              <h3 class="form__title">Quiero una plaza en el piloto</h3>
+              <p class="small" style="margin:0">4 datos y te llamamos. El resto lo hablamos por teléfono.</p>
+              <div class="field">
+                <label for="f-tipo">Soy…</label>
+                <select id="f-tipo" name="tipo">
+                  <option value="titular">Titular de una farmacia</option>
+                  <option value="equipo">Del equipo de una farmacia (adjunto, técnico…)</option>
+                  <option value="compra">Voy a comprar una farmacia</option>
+                </select>
+              </div>
+              <div class="field">
+                <label for="f-farmacia">Nombre de la farmacia</label>
+                <input id="f-farmacia" name="farmacia" type="text" autocomplete="organization" required>
+              </div>
+              <div class="field">
+                <label for="f-municipio">Municipio</label>
+                <input id="f-municipio" name="municipio" type="text" autocomplete="address-level2" required>
+              </div>
+              <div class="field">
+                <label for="f-nombre">Tu nombre</label>
+                <input id="f-nombre" name="nombre" type="text" autocomplete="name" required>
+              </div>
+              <div class="field">
+                <label for="f-tel">Teléfono o WhatsApp</label>
+                <input id="f-tel" name="telefono" type="tel" inputmode="tel" autocomplete="tel" required>
+              </div>
+              <div class="field field--optional">
+                <label for="f-erp">Programa de gestión</label>
+                <input id="f-erp" name="programa" type="text">
+              </div>
+              <label class="check"><input type="checkbox" name="privacidad" required> <span>He leído la <a href="legal/privacidad.html">política de privacidad</a>. Usaremos tus datos de contacto solo para llamarte sobre el piloto.</span></label>
+              <label class="check"><input type="checkbox" name="comunicaciones"> <span>Quiero recibir novedades por correo o WhatsApp (opcional).</span></label>
+              <p class="form-error js-form-error" role="alert" hidden></p>
+              <button class="btn btn--cta btn--block" type="submit">Quiero una plaza en el piloto</button>
+              <ul class="datos-mini" aria-label="Tus datos, en resumen">
+                <li>Contrato de encargado del tratamiento firmado antes de empezar.</li>
+                <li>Análisis en un equipo propio y cifrado, sin herramientas en la nube.</li>
+                <li>Datos de clientela solo si quieres, y seudonimizados. <a href="tus-datos/index.html">Ver detalle</a></li>
+              </ul>
+              <div class="rgpd-box">
+                <p><b>Responsable:</b> Miguel Ángel Leo Acedo. <b>Finalidad:</b> contactarte sobre el piloto. <b>Legitimación:</b> tu consentimiento.</p>
+                <p><b>Destinatarios:</b> no se ceden datos a terceros; el formulario nos llega por correo a través de FormSubmit. <b>Derechos:</b> acceso, rectificación, supresión y otros, en <a href="mailto:m.leo.acedo@gmail.com">m.leo.acedo@gmail.com</a>. <a href="legal/privacidad.html">Más información</a>.</p>
+              </div>
+              <p class="form__alt">¿Dudas antes? <a href="mailto:m.leo.acedo@gmail.com?subject=Duda%20sobre%20SmartPharma">Escríbenos un correo</a></p>
+            </form>
+            <div class="form-success js-form-success" role="status">
+              <h3>Solicitud recibida</h3>
+              <p>En 2 días laborables te llamamos (15 minutos) para ver si encaja. Si encaja, te enviamos el acuerdo del piloto y la guía para exportar los datos de tu programa.</p>
+                          </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 7. Tres preguntas clave -->
+  <section class="section">
+    <div class="container">
+      <div class="section__intro"><h2>Lo que más nos preguntan</h2></div>
+      <div class="faq">
+        <details>
+          <summary>¿Por qué es gratis? ¿Dónde está el truco?</summary>
+          <p>Porque estamos empezando y necesitamos demostrar resultados con farmacias reales. A cambio te pedimos 15 minutos cada dos semanas y tu opinión sincera. Si no te sirve, borramos tus datos y te quedas el Excel.</p>
+        </details>
+        <details>
+          <summary>¿Tengo que exportar los datos yo solo?</summary>
+          <p>No. Lo hacemos contigo por videollamada, en unos 30 minutos, con quien lleve los pedidos. Mira cómo es en la <a href="guia-exportacion/farmatic.html">guía para Farmatic</a>.</p>
+        </details>
+        <details>
+          <summary>¿Y si no me compensa?</summary>
+          <p>El piloto es gratis y sin permanencia. Si sigues, a los 3 meses comprobamos el dinero liberado frente a la foto inicial: si no cubre lo que has pagado, no pagas esos meses.</p>
+        </details>
+      </div>
+      <p style="margin-top:20px"><a href="preguntas/index.html">Ver todas las preguntas</a></p>
+    </div>
+  </section>
+
+</main>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer__grid">
+      <div>
+        <a class="logo" href="index.html" style="color:#fff"><span class="logo__mark" aria-hidden="true">SP</span>SmartPharma</a>
+        <p style="margin-top:12px">Gestión de stock y compras para farmacias independientes.</p>
+      </div>
+      <div>
+        <h4>Contacto</h4>
+        <ul>
+          <li><a href="mailto:m.leo.acedo@gmail.com">m.leo.acedo@gmail.com</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Información</h4>
+        <ul>
+          <li><a href="servicios/index.html">Servicios</a></li>
+          <li><a href="piloto/index.html">Piloto</a></li>
+          <li><a href="preguntas/index.html">Preguntas</a></li>
+          <li><a href="guia-exportacion/farmatic.html">Guía de exportación</a></li>
+          <li><a href="tus-datos/index.html">Tus datos</a></li>
+          <li><a href="legal/aviso-legal.html">Aviso legal</a> · <a href="legal/privacidad.html">Privacidad</a> · <a href="legal/cookies.html">Cookies</a></li>
+        </ul>
+      </div>
+    </div>
+    <p class="footer__legal">Titular: Miguel Ángel Leo Acedo · <a href="mailto:m.leo.acedo@gmail.com">m.leo.acedo@gmail.com</a>. Esta web no usa cookies de seguimiento.</p>
+  </div>
+</footer>
+
+<div class="sticky-bar">
+  <a class="btn btn--cta" href="#alta">Plaza en el piloto</a>
+  <a class="btn btn--ghost" href="mailto:m.leo.acedo@gmail.com?subject=Duda%20sobre%20SmartPharma">Escríbenos</a>
+</div>
+
+<script src="assets/js/main.js" defer></script>
+</body>
+</html>

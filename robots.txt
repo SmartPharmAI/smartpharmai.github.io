@@ -1,0 +1,3 @@
+# Vista previa: bloquea toda indexación. Cambiar al publicar.
+User-agent: *
+Disallow: /

@@ -1,0 +1,215 @@
+<!doctype html>
+<html lang="es-ES">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Vista previa: quitar noindex al publicar -->
+  <meta name="robots" content="noindex, nofollow">
+  <title>Comparador de precios de parafarmacia, gratis | SmartPharma</title>
+  <meta name="description" content="Haz una foto a tu albarán de parafarmacia y compara, producto a producto, lo que pagaste con el precio más bajo encontrado online. Gratis, en un minuto y sin registro.">
+  <link rel="icon" href="../assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../assets/css/styles.css">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Comparador de precios de parafarmacia",
+    "applicationCategory": "BusinessApplication",
+    "operatingSystem": "Web",
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "EUR" }
+  }
+  </script>
+</head>
+<body>
+
+<header class="header">
+  <div class="container header__inner">
+    <a class="logo" href="../index.html"><span class="logo__mark" aria-hidden="true">SP</span>SmartPharma</a>
+    <nav class="nav" aria-label="Principal">
+      <a href="../piloto/index.html">Piloto gratuito</a>
+      <a href="index.html" aria-current="page">Comparador de precios</a>
+      <a href="../servicios/index.html">Servicios</a>
+      <a href="../tus-datos/index.html">Tus datos</a>
+      <a href="../preguntas/index.html">Preguntas</a>
+    </nav>
+    <a class="btn btn--cta btn--small header__cta" href="../index.html#piloto">Quiero una plaza en el piloto</a>
+    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="mobile-nav">Menú</button>
+  </div>
+  <div class="container">
+    <nav class="mobile-nav" id="mobile-nav" aria-label="Principal (móvil)">
+      <a href="../piloto/index.html">Piloto gratuito</a>
+      <a href="index.html">Comparador de precios</a>
+      <a href="../servicios/index.html">Servicios</a>
+      <a href="../tus-datos/index.html">Tus datos</a>
+      <a href="../preguntas/index.html">Preguntas</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="page-hero">
+    <div class="container">
+      <p class="eyebrow">Gratis · 1 minuto · Sin registro</p>
+      <h1>Comparador de precios de parafarmacia</h1>
+      <p>Escanea el código de barras de cualquier producto de parafarmacia y mira, en segundos, el precio más bajo que hemos encontrado online. Si escribes tu PVP, te decimos la diferencia.</p>
+      <p class="small">Las grandes superficies compran por volumen; una farmacia sola, no. Por eso existen las compras conjuntas: <a href="../servicios/index.html#compras">sumar tu pedido al de otras farmacias</a>.</p>
+    </div>
+  </section>
+
+  <!-- Escáner de código de barras -->
+  <section class="section--tight" style="padding-top:0" id="escaner">
+    <div class="container rx">
+      <div class="rx-step sc">
+        <h2 style="font-size:1.4rem">Escanea un producto</h2>
+        <div class="sc__grid">
+          <div>
+            <div class="sc__camera" hidden>
+              <video class="sc__video" playsinline muted></video>
+              <span class="sc__frame" aria-hidden="true"></span>
+            </div>
+            <div class="btn-row">
+              <button class="btn btn--cta js-sc-start" type="button">Escanear con la cámara</button>
+              <button class="btn btn--ghost js-sc-stop" type="button" hidden>Parar la cámara</button>
+            </div>
+            <p class="small js-sc-camera-msg" role="status"></p>
+          </div>
+          <form class="form js-sc-form" novalidate>
+            <div class="field">
+              <label for="sc-ean">O escribe el código de barras</label>
+              <input id="sc-ean" type="text" inputmode="numeric" autocomplete="off" placeholder="13 cifras, por ejemplo 8431166150049" maxlength="14">
+            </div>
+            <div class="field field--optional">
+              <label for="sc-pvp">Tu PVP</label>
+              <input id="sc-pvp" type="text" inputmode="decimal" autocomplete="off" placeholder="Por ejemplo 12,90">
+            </div>
+            <button class="btn btn--ghost" type="submit">Buscar precio</button>
+          </form>
+        </div>
+        <div class="js-sc-result" aria-live="polite"></div>
+        <div class="js-sc-list"></div>
+        <div class="alert alert--info" style="margin-top:16px;margin-bottom:0">
+          <b>No guardamos nada.</b> Solo se consulta el código de barras: en nuestro índice de precios y, si es un código de farmacia, en el registro público de medicamentos de la AEMPS para descartarlos. Tu PVP no sale de tu móvil.
+        </div>
+        <p class="small js-sc-info" style="margin-top:10px"></p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section--tight" style="padding-top:0">
+    <div class="container rx">
+      <ol class="rx-steps" aria-label="Pasos">
+        <li class="is-active" data-step="1">1 · Sube tu listado</li>
+        <li data-step="2">2 · Lo leemos</li>
+        <li data-step="3">3 · Tu resultado</li>
+      </ol>
+
+      <!-- Paso 1 -->
+      <div class="rx-step" id="rx-step-1">
+        <h2 style="font-size:1.4rem">¿Muchos productos? Sube un listado</h2>
+        <p class="small">Un Excel guardado como CSV con código, descripción, unidades y coste. Lo leemos en tu navegador: el valor por categoría y los medicamentos descartados.</p>
+
+        <div class="upload-options">
+          <label class="upload-option js-dropzone" for="rx-file">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 16V4M7 9l5-5 5 5M4 20h16"/></svg>
+            Subir CSV
+            <small>o arrástralo aquí</small>
+          </label>
+          <input class="visually-hidden" id="rx-file" type="file" accept=".csv,.txt">
+
+          <button class="upload-option upload-option--demo" type="button" id="rx-demo">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 3h9l3 3v15H6z"/><path d="M9 10h6M9 14h6M9 18h4"/></svg>
+            Ver un ejemplo
+            <small>Con precios inventados</small>
+          </button>
+        </div>
+
+        <div class="alert alert--info">
+          <b>Tu fichero no se guarda.</b> El cálculo se hace en tu navegador, sin enviar tus cantidades, tus precios ni datos de tu farmacia.
+        </div>
+        <div class="js-rx-error" role="alert"></div>
+      </div>
+
+      <!-- Paso 2 -->
+      <div class="rx-step" id="rx-step-2" hidden>
+        <h2 style="font-size:1.4rem">Leyendo tu albarán…</h2>
+        <div class="js-rx-notice"></div>
+        <ul class="progress">
+          <li data-task="read"><span class="dot"></span><span class="js-task-text">Leyendo los productos del albarán</span></li>
+          <li data-task="classify"><span class="dot"></span><span class="js-task-text">Separando parafarmacia de medicamentos</span></li>
+          <li data-task="prices"><span class="dot"></span><span class="js-task-text">Buscando el precio online más bajo</span></li>
+        </ul>
+      </div>
+
+      <!-- Paso 3 -->
+      <div class="rx-step" id="rx-step-3" hidden>
+        <div class="js-rx-result"></div>
+
+        <div class="rx-cta">
+          <h3>Competir con esos precios empieza por comprar mejor</h3>
+          <p>En el piloto gratuito analizamos todo tu stock, no solo un albarán, y te enseñamos qué tramos alcanzarías comprando junto a otras farmacias de la red.</p>
+          <div class="btn-row">
+            <a class="btn btn--cta" href="../index.html#piloto">Quiero una plaza en el piloto</a>
+            <button class="btn btn--ghost" type="button" id="rx-restart">Probar con otro albarán</button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Contenido indexable -->
+  <section class="section section--alt">
+    <div class="container grid grid--3">
+      <article>
+        <h2 style="font-size:1.3rem">Qué compara</h2>
+        <p>Para cada producto de parafarmacia del albarán: lo que pagaste, tu PVP y el precio más bajo encontrado en tiendas online, con la diferencia en porcentaje.</p>
+      </article>
+      <article>
+        <h2 style="font-size:1.3rem">Qué no hace</h2>
+        <p>No guarda tu albarán, no compara medicamentos y no te pide registrarte. Los precios online son orientativos y cambian a diario.</p>
+      </article>
+      <article>
+        <h2 style="font-size:1.3rem">Y después</h2>
+        <p>Si quieres ir más allá de un albarán, en el <a href="../index.html#piloto">piloto gratuito</a> analizamos todo tu stock y tus compras durante 2 meses.</p>
+      </article>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer__grid">
+      <div>
+        <a class="logo" href="../index.html" style="color:#fff"><span class="logo__mark" aria-hidden="true">SP</span>SmartPharma</a>
+        <p style="margin-top:12px">Gestión de stock y compras para farmacias independientes.</p>
+      </div>
+      <div>
+        <h4>Contacto</h4>
+        <ul>
+          <li><a href="mailto:m.leo.acedo@gmail.com">m.leo.acedo@gmail.com</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Información</h4>
+        <ul>
+          <li><a href="../tus-datos/index.html">Tus datos</a></li>
+          <li><a href="../legal/aviso-legal.html">Aviso legal</a></li>
+          <li><a href="../legal/privacidad.html">Privacidad</a></li>
+          <li><a href="../legal/cookies.html">Cookies</a></li>
+        </ul>
+      </div>
+    </div>
+    <p class="footer__legal">Titular: Miguel Ángel Leo Acedo · <a href="mailto:m.leo.acedo@gmail.com">m.leo.acedo@gmail.com</a>. Esta web no usa cookies de seguimiento.</p>
+  </div>
+</footer>
+
+<div class="sticky-bar">
+  <a class="btn btn--cta" href="../index.html#piloto">Plaza en el piloto</a>
+  <a class="btn btn--ghost" href="mailto:m.leo.acedo@gmail.com?subject=Duda%20sobre%20SmartPharma">Escríbenos</a>
+</div>
+
+<script src="../assets/js/main.js" defer></script>
+<script src="../assets/js/radiografia.js" defer></script>
+<script src="../assets/js/escaner.js" defer></script>
+</body>
+</html>
