@@ -13,6 +13,10 @@ on:
         description: "Primer llenado del índice (sin cuota semanal)"
         type: boolean
         default: false
+      minutos:
+        description: "Duración máxima en minutos"
+        type: number
+        default: 300
 
 permissions:
   contents: write
@@ -33,7 +37,7 @@ jobs:
           python-version: "3.12"
 
       - name: Recorrer tiendas y generar el índice
-        run: python scraper/indexar.py --minutos 300 ${{ inputs.arranque && '--arranque' || '' }}
+        run: python scraper/indexar.py --minutos ${{ inputs.minutos || 300 }} ${{ inputs.arranque && '--arranque' || '' }}
 
       - name: Guardar el índice en el repositorio
         run: |
